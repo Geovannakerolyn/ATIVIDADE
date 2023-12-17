@@ -1,16 +1,17 @@
 // lista-de-tarefas-backend/server.js
 
 const express = require('express');
+
+
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const MONGODB_URI = 'mongodb://localhost:27017/lista-de-tarefas'; // Atualize a URI conforme necessário
+const MONGODB_URI = 'mongodb://localhost:27017/TarefaGeovanna';
 
 app.use(bodyParser.json());
-
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/TarefaGeovanna', { useNewUrlParser: true });
 
 const taskSchema = new mongoose.Schema({
   title: String,
